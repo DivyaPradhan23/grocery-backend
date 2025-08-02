@@ -1,0 +1,647 @@
+{
+	"info": {
+		"_postman_id": "82f9c805-a3c8-427f-96d6-3bbaa06f1bad",
+		"name": "Grocery store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47235837",
+		"_collection_link": "https://divyapradhan-32964.postman.co/workspace/Divya-Pradhan's-Workspace~2ab2869b-530c-43ae-8d53-26d28f1675ce/collection/47235837-82f9c805-a3c8-427f-96d6-3bbaa06f1bad?action=share&source=collection_link&creator=47235837"
+	},
+	"item": [
+		{
+			"name": "RegisterManager",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"admin123\",\r\n  \"email\": \"admin@example.com\",\r\n  \"password\": \"Admin321\",\r\n  \"password2\": \"Admin321\",\r\n  \"role\": \"manager\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/register/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RegisterCustomer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"divya123\",\r\n  \"email\": \"divya@example.com\",\r\n  \"password\": \"Divya@023\",\r\n  \"password2\": \"Divya@023\",\r\n  \"role\": \"customer\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/register/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GenerateToken",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"admin123\",\r\n  \"password\": \"Admin321\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/token/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RefreshToken",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1NDA2NjMwNywiaWF0IjoxNzUzOTc5OTA3LCJqdGkiOiIwOGM3N2ZiMjMzMzA0YmRhYWY3MjU5NmZmMmJmZTU0MCIsInVzZXJfaWQiOiIxIn0.VML9pa6PBZjZZ5SssfuYTOo7TWIviRQiIGOds0oCCuE\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/token/refresh/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"token",
+						"refresh",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateProduct",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzOTgwODE0LCJpYXQiOjE3NTM5ODA1MTQsImp0aSI6IjNmNWEyMTZlZjIwOTQ3NTU4OTk2MDQ5Y2Y3ZGZiNzg0IiwidXNlcl9pZCI6IjEifQ.kMJ-wJB2fG52ppoKOYnsVkZoHVMk6gW_Z1NZi45K29g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Amul Milk\",\r\n  \"category\": \"Dairy\",\r\n  \"price\": 50.00,\r\n  \"stock\": 100,\r\n  \"image\": \"https://cdn.pixabay.com/photo/2017/03/27/14/56/milk-2170481_960_720.jpg\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/products/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddToCart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzOTg2MTQ3LCJpYXQiOjE3NTM5ODI1NDcsImp0aSI6ImI5Zjk5ZDdhNjlkMDRhMjQ5ZjJkN2Y3ZjkzMWE0ZGNkIiwidXNlcl9pZCI6IjIifQ.kDfyklOs_PBHLIYs8nAB_chS6Bu4_CHHgl9eam8ol2E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"product_id\": 1,\r\n  \"quantity\": 2\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/cart/add/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"cart",
+						"add",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Checkout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU0MDc0MjQ2LCJpYXQiOjE3NTQwNzA2NDYsImp0aSI6ImNjZDg4NTg4MzgyNzQxOWJiNzc4MDU5YzcxYmZhZTRjIiwidXNlcl9pZCI6IjIifQ.HjvFS_Lc9e1zjT2HTz74sa4Hil-ln9442x1n_4t93CA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"promo_code\": \"SAVE10\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/checkout/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"checkout",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateWishlist",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU0MDY2Njk3LCJpYXQiOjE3NTQwNjMwOTcsImp0aSI6ImY3ODI5Zjc0N2EwZDQ1MDBhMjg2MzQ0ODYzMmE5NDVkIiwidXNlcl9pZCI6IjIifQ.BCRx4MnBxPIQKM98OWsZdCWnvCXtlhKtEvLiWTgsQv4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"product_id\": 1\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/wishlist/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"wishlist",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "ViewCart",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Wishlist",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU0MDY2Njk3LCJpYXQiOjE3NTQwNjMwOTcsImp0aSI6ImY3ODI5Zjc0N2EwZDQ1MDBhMjg2MzQ0ODYzMmE5NDVkIiwidXNlcl9pZCI6IjIifQ.BCRx4MnBxPIQKM98OWsZdCWnvCXtlhKtEvLiWTgsQv4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/wishlist/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"wishlist",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FilterProduct",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU0MDY2Njk3LCJpYXQiOjE3NTQwNjMwOTcsImp0aSI6ImY3ODI5Zjc0N2EwZDQ1MDBhMjg2MzQ0ODYzMmE5NDVkIiwidXNlcl9pZCI6IjIifQ.BCRx4MnBxPIQKM98OWsZdCWnvCXtlhKtEvLiWTgsQv4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/products/filter/?category=Dairy&popular=true",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"products",
+						"filter",
+						""
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "Dairy"
+						},
+						{
+							"key": "popular",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SalesReport",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU0MDc0MjQ2LCJpYXQiOjE3NTQwNzA2NDYsImp0aSI6ImNjZDg4NTg4MzgyNzQxOWJiNzc4MDU5YzcxYmZhZTRjIiwidXNlcl9pZCI6IjIifQ.HjvFS_Lc9e1zjT2HTz74sa4Hil-ln9442x1n_4t93CA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/report/sales/?sort=most",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"report",
+						"sales",
+						""
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "most"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Low stock",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{ManagerToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/promos/low-stock/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"promos",
+						"low-stock",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateProduct",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU0MDcxNjc0LCJpYXQiOjE3NTQwNjgwNzQsImp0aSI6IjZlYmVkYTJhOWYyYjQxY2Q4OWY0N2QwZWZiNzIyMzBiIiwidXNlcl9pZCI6IjEifQ.vbCLdu1zWFF6n4MeUjAUq7Kl7wxpkTsJQKaPufw5s80",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Updated Amul Milk\",\r\n  \"category\": \"Dairy\",\r\n  \"price\": 60.00,\r\n  \"stock\": 50,\r\n  \"image\": \"http://example.com/new-image.jpg\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/products/1/update/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"products",
+						"1",
+						"update",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RemoveItemFromCart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUzOTg2MTQ3LCJpYXQiOjE3NTM5ODI1NDcsImp0aSI6ImI5Zjk5ZDdhNjlkMDRhMjQ5ZjJkN2Y3ZjkzMWE0ZGNkIiwidXNlcl9pZCI6IjIifQ.kDfyklOs_PBHLIYs8nAB_chS6Bu4_CHHgl9eam8ol2E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/cart/2/remove/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"cart",
+						"2",
+						"remove",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Wishlist",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU0MDY2Njk3LCJpYXQiOjE3NTQwNjMwOTcsImp0aSI6ImY3ODI5Zjc0N2EwZDQ1MDBhMjg2MzQ0ODYzMmE5NDVkIiwidXNlcl9pZCI6IjIifQ.BCRx4MnBxPIQKM98OWsZdCWnvCXtlhKtEvLiWTgsQv4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/wishlist/1/remove/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"wishlist",
+						"1",
+						"remove",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU0MDcxNjc0LCJpYXQiOjE3NTQwNjgwNzQsImp0aSI6IjZlYmVkYTJhOWYyYjQxY2Q4OWY0N2QwZWZiNzIyMzBiIiwidXNlcl9pZCI6IjEifQ.vbCLdu1zWFF6n4MeUjAUq7Kl7wxpkTsJQKaPufw5s80",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/api/products/2/delete/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"products",
+						"2",
+						"delete",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://127.0.0.1:8000",
+			"type": "default"
+		}
+	]
+}
