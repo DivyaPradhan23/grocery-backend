@@ -34,6 +34,9 @@ Postman Collection is included in the repo: [`Grocery_store.postman_collection.j
 - Django & Django REST Framework
 - SQLite (can upgrade to PostgreSQL)
 
+  # Database Design (UML Diagram)
+  [UML Diagram](grocery_store_uml.png)
+
 # Setup
 
 ``bash
